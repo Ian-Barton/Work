@@ -1,0 +1,125 @@
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+
+			h1	{text-align: center;
+			}
+
+			body 	{background-image: url("background.jpg");
+				background-size: cover;
+			}
+			#mainDiv {
+				
+			}
+			#topDiv {
+				height: 4em;
+				width: 35%;
+				margin: auto;
+				background-color: #666666;
+				margin-bottom: -18px;
+				box-shadow: 0 4px 8px 0;
+				text-align: right;
+				padding: 1em;
+			}
+			#plus {
+				height: 2em;
+				width: 2em;
+				border: 0px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-color: #666666;
+				background-image: url("Logos/add-plus-button.png");
+			}
+			#plus:checked {
+				filter: hue-rotate(180deg);
+			}
+			#listDiv {
+				background-color: #333333;
+				width: 35%;
+				height: 30em;
+				margin: auto;
+				margin-top: -18px;
+				box-shadow: 0 4px 8px 0;
+				
+			}
+			#entry	{
+				min-height: 10em;
+				width: 95%;
+				text-align: center;
+				font-size: 1.5em;
+			}
+			img {
+				max-width: 100%;
+			}
+			.form-popup {
+				display: none;
+				position: fixed;
+				bottom: 30em;
+				right: 15px;
+				border: 3px solid #333333;
+				background-color: #666666;
+				height: 100px;
+			}
+			
+	</style>
+	<script>
+	function add() 
+	{
+		document.getElementById("myForm").style.display = "block";
+	}
+		/*function add()
+		{
+		  if(3>2)
+		  {
+					var item, node, text, textnode;
+					item = document.getElementById("todo").value;
+					node = document.createElement("li");
+					textnode = document.createTextNode(item);
+					node.appendChild(textnode);
+					document.getElementById('outputDiv').appendChild(node);
+					
+					var remove = document.createElement("input");
+					remove.setAttribute("type", "button");
+					remove.setAttribute("value", "Remove");
+					remove.setAttribute("id", "remove");
+					
+					remove.addEventListener('click', function(e) {
+						node.parentNode.removeChild(node);
+					}, false);
+			node.appendChild(remove);
+		  }
+		}*/
+	</script>
+</head>
+<body>
+
+<div class="col" id="mainDiv">
+	<div id="topDiv">
+	<input id="plus" type="button" onclick="add()"/>
+	</div>
+	<div id="listDiv">
+		<ul id="list">
+		</ul>
+	</div>
+</div>
+
+<div class="form-popup" id="myForm">
+	<form action="/action_form.php" method="get">
+		<label for="fname">Task:</label>
+		<input type="text" id="task" name="task"><br>
+		<label for="fname">Color:</label>
+		<select>
+		</select>
+		<label for="fname">Logo:</label>
+		<select>
+		</select><br>
+		<button id="form-button" value="Add"/>
+		<button id="form-button" value="Close"/>
+	</form>
+</div>
+
+</body>
+</html>
